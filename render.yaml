@@ -8,20 +8,11 @@ services:
     envVars:
       - key: PORT
         value: 10000
-      # 可选：填了 key 机器人就走真实大模型，不填走本地智能兜底
-      - key: Q_BOT_KEY
+      # 三个机器人全部走 DeepSeek（免费额度），只需填这一个 key
+      - key: DEEPSEEK_KEY
         sync: false
-      - key: Q_BOT_BASE
-        sync: false
-      - key: Q_BOT_MODEL
-        sync: false
-      - key: FISH_BOT_KEY
-        sync: false
-      - key: FISH_BOT_BASE
-        sync: false
-      - key: FISH_BOT_MODEL
-        sync: false
-      - key: CLAUDE_BOT_KEY
-        sync: false
-      - key: CLAUDE_BOT_MODEL
-        sync: false
+        # 到 https://platform.deepseek.com 注册即可领取免费额度，把 key 填这里
+      - key: DEEPSEEK_BASE
+        value: https://api.deepseek.com/v1
+      - key: DEEPSEEK_MODEL
+        value: deepseek-chat
