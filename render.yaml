@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: miui-chat
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 10000
+      # 可选：填了 key 机器人就走真实大模型，不填走本地智能兜底
+      - key: Q_BOT_KEY
+        sync: false
+      - key: Q_BOT_BASE
+        sync: false
+      - key: Q_BOT_MODEL
+        sync: false
+      - key: FISH_BOT_KEY
+        sync: false
+      - key: FISH_BOT_BASE
+        sync: false
+      - key: FISH_BOT_MODEL
+        sync: false
+      - key: CLAUDE_BOT_KEY
+        sync: false
+      - key: CLAUDE_BOT_MODEL
+        sync: false
